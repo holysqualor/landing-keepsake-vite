@@ -1,0 +1,11 @@
+section#journal.journal.section(aria-labelledby='journal-title')
+  .container
+    +section-heading('04 / Журнал')
+      h2#journal-title.section-title Нотатки <em>з майстерні.</em>
+    ul.journal__grid
+      each post in journal
+        li
+          article.journal-card
+            +picture(post.image, post.alt, 800, 600, true).journal-card__img
+            p.journal-card__date= post.date
+            h3.journal-card__title= post.title

@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.contact {
+  background: var(--color-dark);
+  color: var(--color-paper);
+
+  &__inner {
+    max-width: 950px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: clamp(2.7rem, 6vw, 6rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.12;
+
+    em {
+      color: var(--color-coral);
+      font-family: Georgia, serif;
+      font-weight: 400;
+    }
+  }
+}

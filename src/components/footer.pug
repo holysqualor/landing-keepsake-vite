@@ -1,0 +1,23 @@
+footer.site-footer
+  .container.site-footer__grid
+    .site-footer__brand
+      a.logo(href='#top')
+        | keep
+        span.logo__accent sake.
+      p Створено з увагою до деталей.
+    each group in footerLinks
+      .site-footer__col
+        h2= group.title
+        ul
+          each link in group.links
+            li
+              a(href=link.href)= link.label
+    .site-footer__col
+      h2 Соцмережі
+      ul
+        each social in socials
+          li
+            a(href=social.href, target='_blank', rel='noopener noreferrer')= social.name
+  .container.site-footer__bottom
+    span © 2026 Keepsake Studio
+    span Зроблено з турботою.

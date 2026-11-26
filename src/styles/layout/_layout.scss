@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.container {
+  width: min(100% - 2.5rem, 1180px);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: rem(84);
+
+  @include mq(md) {
+    padding-block: rem(120);
+  }
+}
+
+.section-title {
+  max-width: 790px;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.13;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+
+  em {
+    color: var(--color-coral);
+    font-family: Georgia, serif;
+    font-weight: 400;
+  }
+}
+
+.section-heading {
+  margin-bottom: rem(46);
+}
+
+.eyebrow {
+  font-size: rem(12);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.media-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: -100px;
+  left: 1rem;
+  padding: 1rem;
+  background: var(--color-white);
+
+  &:focus {
+    top: 1rem;
+  }
+}

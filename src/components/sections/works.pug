@@ -1,0 +1,18 @@
+section#works.works.section(aria-labelledby='works-title')
+  .container
+    +section-heading('02 / Вибрані роботи')
+      h2#works-title.section-title Кожен проєкт — <em>особлива історія.</em>
+    .works__filter
+      each filter, i in filters
+        input.works__radio(
+          type='radio',
+          name='portfolio-filter',
+          id=`filter-${filter.id}`,
+          value=filter.id,
+          checked=filter.active
+        )
+        label.works__chip(for=`filter-${filter.id}`)= filter.label
+      ul.works__grid
+        each work, i in works
+          li.works__item(data-category=work.category)
+            +work-card(work)

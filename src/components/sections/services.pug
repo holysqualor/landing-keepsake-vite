@@ -1,0 +1,11 @@
+section#services.services.section(aria-labelledby='services-title')
+  .container
+    +section-heading('03 / Що ми робимо')
+      h2#services-title.section-title Від першої ідеї <em>до останньої деталі.</em>
+    ul.services__list
+      each service in services
+        li.services__item
+          span.services__number= service.number
+          h3.services__title= service.title
+          p.services__description= service.description
+          +icon('arrow')

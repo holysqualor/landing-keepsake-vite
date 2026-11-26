@@ -1,0 +1,11 @@
+section#about.about.section(aria-labelledby='about-title')
+  .container.about__grid
+    +section-heading('01 / Про студію')
+      h2#about-title.section-title Ми віримо, що хороші ідеї <em>живуть довго.</em>
+    .about__copy
+      p Ми — невелика незалежна студія, яка перетворює сенси на виразну візуальну мову. Любимо ясність, характер і речі, що витримують час.
+      ul.stats
+        each stat in stats
+          li.stats__item
+            strong.stats__value= stat.value
+            span.stats__label= stat.label

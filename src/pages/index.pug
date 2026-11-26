@@ -1,0 +1,15 @@
+extends ../layouts/main.pug
+block append meta
+  meta(
+    name='description',
+    content='Keepsake — незалежна креативна студія. Брендинг, вебдизайн та артдирекшн.'
+  )
+  meta(property='og:title', content='Keepsake — дизайн, що залишається')
+  meta(property='og:type', content='website')
+block content
+  include ../components/sections/hero.pug
+  include ../components/sections/about.pug
+  include ../components/sections/works.pug
+  include ../components/sections/services.pug
+  include ../components/sections/journal.pug
+  include ../components/sections/contact.pug

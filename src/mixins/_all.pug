@@ -1,0 +1,60 @@
+mixin icon(name)
+  case name
+    when 'arrow'
+      svg.icon(
+        viewBox='0 0 24 24',
+        fill='none',
+        stroke='currentColor',
+        stroke-width='1.7',
+        aria-hidden='true'
+      )
+        path(d='M4 12h16m-7-7 7 7-7 7')
+    when 'spark'
+      svg.icon(
+        viewBox='0 0 24 24',
+        fill='none',
+        stroke='currentColor',
+        stroke-width='1.7',
+        aria-hidden='true'
+      )
+        path(d='M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z')
+    default
+      span(aria-hidden='true') ✦
+mixin btn(label, href, variant)
+  a(class=['btn', variant ? 'btn--' + variant : 'btn--primary'], href=href)&attributes(attributes)
+    span= label
+    +icon('arrow')
+mixin picture(name, alt, width, height, lazy, sizes)
+  - const imageBase = '/assets/images/' + name;
+  picture
+    source(
+      type='image/avif',
+      srcset=`${imageBase}-400.avif 400w, ${imageBase}-800.avif 800w`,
+      sizes=sizes || '(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw'
+    )
+    source(
+      type='image/webp',
+      srcset=`${imageBase}-400.webp 400w, ${imageBase}-800.webp 800w`,
+      sizes=sizes || '(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw'
+    )
+    img.media-img(
+      src=`${imageBase}-800.jpg`,
+      alt=alt,
+      width=width || 800,
+      height=height || 600,
+      loading=lazy ? 'lazy' : 'eager',
+      decoding='async'
+    )&attributes(attributes)
+mixin work-card(work)
+  article.work-card
+    +picture(work.image, work.alt, 800, 600, true).work-card__img
+    .work-card__details
+      div
+        p.work-card__tag= work.tag
+        h3.work-card__title= work.title
+      +icon('arrow')
+mixin section-heading(eyebrow)
+  .section-heading
+    p.eyebrow= eyebrow
+    if block
+      block

@@ -1,0 +1,20 @@
+include ../data/content.pug
+include ../mixins/_all.pug
+doctype html
+html(lang='uk')
+  head
+    block meta
+      meta(charset='UTF-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+    block title
+      title Keepsake — незалежна дизайн-студія
+    block styles
+      link(rel='stylesheet', href='/src/styles/main.scss')
+  body
+    a.skip-link(href='#main') Перейти до вмісту
+    include ../components/header.pug
+    main#main
+      block content
+    include ../components/footer.pug
+    block scripts
+      script(type='module', src='/src/scripts/main.js')

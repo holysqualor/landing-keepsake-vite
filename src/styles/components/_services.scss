@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+.services {
+  &__list {
+    border-top: 1px solid rgb(41 40 32 / 25%);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 40px 1fr 28px;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 2rem;
+    border-bottom: 1px solid rgb(41 40 32 / 25%);
+
+    @include mq(md) {
+      grid-template-columns: 70px 1fr 1fr 28px;
+    }
+  }
+
+  &__number {
+    color: var(--color-coral);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-weight: 500;
+  }
+
+  &__description {
+    grid-column: 2 / 3;
+    margin: 0;
+    color: var(--color-muted);
+
+    @include mq(md) {
+      grid-column: auto;
+    }
+  }
+}

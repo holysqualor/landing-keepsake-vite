@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+.about {
+  &__grid {
+    display: grid;
+    gap: 2rem;
+
+    @include mq(md) {
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 5rem;
+    }
+  }
+
+  &__copy {
+    padding-top: 2rem;
+    line-height: 1.9;
+    color: var(--color-muted);
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+
+  &__item {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  &__value {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  &__label {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+}

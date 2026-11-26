@@ -1,0 +1,11 @@
+header.site-header
+  .container.site-header__inner
+    a.logo(href='#top', aria-label='Keepsake — на початок')
+      | keep
+      span.logo__accent sake.
+    nav.site-nav(aria-label='Основна навігація')
+      ul.site-nav__list
+        each item, i in navItems
+          li
+            a.site-nav__link(href=item.href, class={ 'site-nav__link--active': i === 0 })= item.label
+    +btn('Обговорити проєкт', '#contact', 'outline')(aria-label='Перейти до контактів')
